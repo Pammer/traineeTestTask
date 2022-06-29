@@ -33,8 +33,12 @@ promocodes (promocode_id, name, discount) - промокоды
 Доля — соотношение заказов с промокодами и общего количества заказов
 
 Задание 4
+
 В resources\Task4.txt
-Напиши xpath и css селектор для кнопки стрелки с https://ya.ru/
+напиши xpath и css селектор 
+
+для кнопки стрелки с https://ya.ru/
+
 Скриншот:
 https://disk.yandex.ru/i/Q5EAJdenTiY5Nw
 
