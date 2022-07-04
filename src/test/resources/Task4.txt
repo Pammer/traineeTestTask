@@ -1,0 +1,12 @@
+CSS-селекторы
+По классу
+.search3__button-svg
+[class='search3__button-svg']
+.mini-suggest__button
+[class='search3__button mini-suggest__button']
+Без атрибутов
+html button
+
+X-PATH селекторы
+$x(".//button")
+$x(".//button[@class='search3__button mini-suggest__button']")
