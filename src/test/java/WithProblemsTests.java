@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -8,11 +10,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WithProblemsTests {
 
-    private final String CONST = "const";
+    private String CONST = "const";
     private final static String bd = "pui";
 
     @Test
-    public void equalsOneToOne(){
+    public void equalsOneToOneString(){
         assertEquals("1", "1");
     }
 
@@ -34,7 +36,7 @@ public class WithProblemsTests {
     public void stringsMustBeEquals(){
         String res = "a";
 
-        if (bd == new String("pui")) {
+        if (bd.equals(new String("pui"))) {
             res = "asd";
         }
 
@@ -43,10 +45,10 @@ public class WithProblemsTests {
 
     @Test
     public void successfullyRemovingFirstElementFromList(){
-        List<String> sourceData = List.of("1", "viskas", "chupocabra");
-        for (String element: sourceData){
-            sourceData.remove(element);
-        }
+        ArrayList sourceData = new ArrayList(Arrays.asList("1", "viskas", "chupocabra"));
+
+        sourceData.remove(0);
+
         assertFalse(sourceData.contains("1"));
     }
 
