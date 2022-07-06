@@ -4,6 +4,6 @@ public class ReadFileTests {
 
     @Test
     public void secondLineShouldHabAlloha(){
-      //write here second task
+      //second string contains "аллоха"
     }
 }
