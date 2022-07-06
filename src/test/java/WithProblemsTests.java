@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -8,33 +9,30 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WithProblemsTests {
 
-    private final String CONST = "const";
-    private final static String bd = "pui";
+    private static final String CONST = "newValue";
+    private static final String bd = "pui";
 
     @Test
-    public void equalsOneToOne(){
+    public void testEqualsOneToOneString() {
         assertEquals("1", "1");
     }
 
-
     @Test
-    public void assignValueToConstVar(){
-        CONST = "newValue";
-        assertEquals("newValue", CONST);
+    public void testAssignValueToConstVar() {
+
+        assertEquals(new String("newValue"), CONST);
     }
 
     @Test
-    public static void equalsOneToOne(){
+    public void testEqualsOneToOneShort() {
         assertEquals(1, 1);
     }
 
-
-
     @Test
-    public void stringsMustBeEquals(){
+    public void testStringsMustBeEquals() {
         String res = "a";
 
-        if (bd == new String("pui")) {
+        if (bd.equals(new String("pui"))) {
             res = "asd";
         }
 
@@ -42,10 +40,18 @@ public class WithProblemsTests {
     }
 
     @Test
-    public void successfullyRemovingFirstElementFromList(){
-        List<String> sourceData = List.of("1", "viskas", "chupocabra");
-        for (String element: sourceData){
-            sourceData.remove(element);
+    public void testSuccessfullyRemovingFirstElementFromList() {
+        List<String> sourceData = new ArrayList<>();
+        sourceData.add("1");
+        sourceData.add("viskas");
+        sourceData.add("chupocabra");
+
+        List<String> copySourceData = new ArrayList<>(sourceData);
+
+        for (String element : copySourceData) {
+            if (element.equals("1")) {
+                sourceData.remove(element);
+            }
         }
         assertFalse(sourceData.contains("1"));
     }
