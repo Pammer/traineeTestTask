@@ -1,0 +1,2 @@
+css_selector = .search3__button-svg
+xpath = /html/body/main/div[2]/form/div[2]/button/svg

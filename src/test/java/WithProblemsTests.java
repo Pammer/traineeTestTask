@@ -1,14 +1,14 @@
-import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WithProblemsTests {
 
-    private final String CONST = "const";
+    private String CONST = "const";
     private final static String bd = "pui";
 
     @Test
@@ -24,7 +24,7 @@ public class WithProblemsTests {
     }
 
     @Test
-    public static void equalsOneToOne(){
+    public void equalsOne_ToOne(){
         assertEquals(1, 1);
     }
 
@@ -32,7 +32,7 @@ public class WithProblemsTests {
 
     @Test
     public void stringsMustBeEquals(){
-        String res = "a";
+        String res = "asd";
 
         if (bd == new String("pui")) {
             res = "asd";
@@ -42,12 +42,14 @@ public class WithProblemsTests {
     }
 
     @Test
-    public void successfullyRemovingFirstElementFromList(){
-        List<String> sourceData = List.of("1", "viskas", "chupocabra");
-        for (String element: sourceData){
-            sourceData.remove(element);
-        }
-        assertFalse(sourceData.contains("1"));
+    public void successRemovingFirstElementFromList(){
+        ArrayList<String> myList = new ArrayList<String>();
+        myList.add("1");
+        myList.add("viskas");
+        myList.add("hupocabra");
+        myList.remove(0);
+        
+        assertFalse(myList.contains("1"));
     }
 
 
