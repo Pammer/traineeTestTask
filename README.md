@@ -6,6 +6,7 @@
 
 
 **Задание 1**
+https://market.e-m-shop.ru/wp-content/uploads/2021/01/61254-emoticon-icons-mark-computer-tick-check-emoji-1536x1536.png
 
 Скорректируйте класс WithProblemsTests, чтобы проект скомпилировался, а все пять тестов успешно завершились.
 
