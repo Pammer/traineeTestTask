@@ -1,0 +1,1 @@
+SELECT COUNT(*)/(SELECT COUNT(*) FROM orders)*100 AS percent FROM orders WHERE promocode_id IS NOT NULL
