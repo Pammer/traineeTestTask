@@ -1,0 +1,2 @@
+cssSelector form>div>button>svg
+xpath $x(".//form/div[@class='search3__inner']/button")
