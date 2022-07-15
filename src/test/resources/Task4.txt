@@ -1,0 +1,8 @@
+xpath:
+"//button[@type='submit']"
+"//button[@aria-label='Найти']"
+
+CSS:
+по классу: ".search3__button.mini-suggest__button"
+по атрибуту "[tabindex]"
+по имени атрибута: "[type='submit']", "[tabindex = '-1']", [aria-label = 'Найти']
