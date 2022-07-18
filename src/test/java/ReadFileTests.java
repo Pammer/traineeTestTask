@@ -1,16 +1,26 @@
+
+
 import org.junit.jupiter.api.Test;
 
+import java.io.FileReader;
+import java.io.IOException;
+
+
+
 public class ReadFileTests {
+        @Test
+        public void secondLineShouldHabAlloha(){
 
-    @Test
-    public void secondLineShouldHabAlloha(){
-      //write here second task
-      //read file and print text  
-    File file = new File("ReadFileTests.txt");
-    Scanner sc = new Scanner(file);
+            try (FileReader reader = new FileReader("src/test/resources/ReadFileTests.txt")) {
+                // читаем посимвольно
+                int c;
+                while ((c = reader.read()) != -1) {
 
-    while(sc.hasNext()) {
-	System.out.println(sc.next());
-    }
-  }
-}
+                    System.out.print((char) c);
+                }
+            } catch (IOException ex) {
+
+                System.out.println(ex.getMessage());
+            }
+        }
+        }
