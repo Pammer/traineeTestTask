@@ -1,26 +1,27 @@
-
-
 import org.junit.jupiter.api.Test;
 
-import java.io.FileReader;
-import java.io.IOException;
-
-
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class ReadFileTests {
-        @Test
-        public void secondLineShouldHabAlloha(){
 
-            try (FileReader reader = new FileReader("src/test/resources/ReadFileTests.txt")) {
-                // читаем посимвольно
-                int c;
-                while ((c = reader.read()) != -1) {
-
-                    System.out.print((char) c);
-                }
-            } catch (IOException ex) {
-
-                System.out.println(ex.getMessage());
+    @Test
+    public void secondLineShouldHabAlloha() throws FileNotFoundException {
+        String path = "src/test/resources/ReadFileTests.txt";
+        File file = new File(path);
+        Scanner scanner = new Scanner(file);
+        while (scanner.hasNextLine()) {
+            if (scanner.nextLine().contains("аллоха")) {
+                System.out.println(true);
+            }
+            else {
+                System.out.println(false);
             }
         }
-        }
+        scanner.close();
+    }
+}
+
+
+
