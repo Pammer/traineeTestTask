@@ -1,14 +1,17 @@
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WithProblemsTests {
 
-    private final String CONST = "const";
+    private String CONST = "const";
     private final static String bd = "pui";
 
     @Test
@@ -19,12 +22,13 @@ public class WithProblemsTests {
 
     @Test
     public void assignValueToConstVar(){
+
         CONST = "newValue";
         assertEquals("newValue", CONST);
     }
 
     @Test
-    public static void equalsOneToOne(){
+    public void equalsOneToOneNumbers(){
         assertEquals(1, 1);
     }
 
@@ -34,7 +38,7 @@ public class WithProblemsTests {
     public void stringsMustBeEquals(){
         String res = "a";
 
-        if (bd == new String("pui")) {
+        if (bd.equals("pui")) {
             res = "asd";
         }
 
@@ -42,13 +46,19 @@ public class WithProblemsTests {
     }
 
     @Test
-    public void successfullyRemovingFirstElementFromList(){
-        List<String> sourceData = List.of("1", "viskas", "chupocabra");
-        for (String element: sourceData){
-            sourceData.remove(element);
+    public void successfullyRemovingFirstElementFromList() {
+
+            ArrayList<String> sourceData = new ArrayList<>();
+            sourceData.add("1");
+            sourceData.add("viskas");
+            sourceData.add("chupocabra");
+            if (sourceData.size() > 0) {
+                sourceData.remove(0);
+            }
+
+            assertFalse(sourceData.contains("1"));
         }
-        assertFalse(sourceData.contains("1"));
-    }
+
 
 
 }
