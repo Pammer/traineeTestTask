@@ -1,4 +1,7 @@
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 import org.junit.jupiter.api.Test;
@@ -44,15 +47,18 @@ public class WithProblemsTests {
 
     @Test
     public void successfullyRemovingFirstElementFromList() {
-        ArrayList<String> sourceData = new ArrayList<>();
-        sourceData.add("1");
-        sourceData.add("viskas");
-        sourceData.add("chupocabra");
 
-        sourceData.removeIf(element -> element == "1");
-        
-        assertFalse(sourceData.contains("1"));
-}
+            ArrayList<String> sourceData = new ArrayList<>();
+            sourceData.add("1");
+            sourceData.add("viskas");
+            sourceData.add("chupocabra");
+            if (sourceData.size() > 0) {
+                sourceData.remove(0);
+            }
+
+            assertFalse(sourceData.contains("1"));
+        }
+
 
 
 }
