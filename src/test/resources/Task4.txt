@@ -1,0 +1,2 @@
+css=.search3__button
+xpath=//button[@type='submit']
